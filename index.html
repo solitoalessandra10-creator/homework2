@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Media e Varianza di numeri randomici</title>
-  
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Statistiche Random</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2>Numeri generati</h2>
-<textarea id="boxNumeri" readonly></textarea>
+    <!-- 1. TITOLO -->
+    <h1>📊 Statistiche Random</h1>
 
-<h3>Generatore Random + Statistiche</h3>
+    <!-- 2. BOTTONI -->
+    <div class="pulsanti">
+        <button id="btnGenera" onclick="genera()">Genera Numero</button>
+        <button id="btnReset" onclick="reset()">Reset</button>
+    </div>
 
-<button id="btnGenera" onclick="genera()">Genera Numero</button>
-<button id="btnReset" onclick="reset()">Reset</button>
+    <!-- 3. BOX NUMERI -->
+    <h3>Numeri generati</h3>
+    <textarea id="boxNumeri" readonly></textarea>
 
-<div id="output"></div>
-<!-- Collegamento al file JS -->
-<script src="script.js"></script>
+    <!-- 4. BOX METODO ONLINE -->
+    <h3>Metodo Online (Welford)</h3>
+    <div id="onlineBox"></div>
+
+    <!-- 5. BOX METODO NAIVE -->
+    <h3>Metodo Naive</h3>
+    <div id="naiveBox"></div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
 
 </body>
+</html>
