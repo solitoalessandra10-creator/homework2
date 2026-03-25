@@ -31,6 +31,11 @@ button {
     color: white;
 }
 
+#btntestPatologico  {
+    background-color: #267BF1;
+    color: white;
+}
+
 button:hover {
     transform: scale(1.1);
     opacity: 0.85;
