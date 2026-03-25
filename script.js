@@ -94,6 +94,4 @@ function testPatologico() {
 
     document.getElementById("naiveBox").innerText =
         `Media: ${media_naive}\nVarianza: ${var_naive}`;
-
-    alert("Test patologico completato!");
 }
