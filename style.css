@@ -21,17 +21,17 @@ button {
     transition: all 0.3s ease;
 }
 
-#btnGenera {
+#btngenera {
     background-color: #4CAF50;
     color: white;
 }
 
-#btnReset {
+#btnreset {
     background-color: #f44336;
     color: white;
 }
 
-#btntestPatologico  {
+#btntestpatologico  {
     background-color: #267BF1;
     color: white;
 }
