@@ -90,5 +90,3 @@ function testPatologico() {
         `Media: ${media_naive}\nVarianza: ${var_naive}`;
 }
 
-document.getElementById("commento").innerText =
-    "La formula naive soffre di cancellazione numerica, mentre Welford resta stabile.";
