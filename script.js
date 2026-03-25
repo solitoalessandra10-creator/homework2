@@ -1,4 +1,3 @@
-// Variabili globali
 let n = 0;
 let media_online = 0;
 let M2 = 0;
