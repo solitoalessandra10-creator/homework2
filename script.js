@@ -1,17 +1,19 @@
+// Variabili globali
 let n = 0;
 let media_online = 0;
 let M2 = 0;
-
 let valori = [];
 
+// ---------------------
+// GENERA NUMERO RANDOM
+// ---------------------
 function genera() {
     const x = Math.random() * 100;
     valori.push(x);
 
-    // Salva numeri
     document.getElementById("boxNumeri").value += x.toFixed(2) + "\n";
 
-    // ONLINE (Welford)
+    // --- WELFORD ---
     n++;
     let delta = x - media_online;
     media_online += delta / n;
@@ -20,8 +22,8 @@ function genera() {
 
     let var_online = n > 1 ? M2 / (n - 1) : 0;
 
-    // NAIVE
-    let somma = valori.reduce((a,b) => a + b, 0);
+    // --- NAIVE ---
+    let somma = valori.reduce((a, b) => a + b, 0);
     let media_naive = somma / valori.length;
 
     let var_naive = 0;
@@ -38,6 +40,9 @@ function genera() {
         `Media: ${media_naive.toFixed(4)}\nVarianza: ${var_naive.toFixed(4)}`;
 }
 
+// ---------------------
+// RESET
+// ---------------------
 function reset() {
     n = 0;
     media_online = 0;
@@ -49,18 +54,19 @@ function reset() {
     document.getElementById("naiveBox").innerText = "";
 }
 
+// ---------------------
+// TEST PATOLOGICO
+// ---------------------
 function testPatologico() {
     reset();
 
-    // Sequenza patologica: numeri grandi + piccole differenze
     let base = 1e12;
 
     for (let i = 1; i <= 1000; i++) {
-        let x = base + i;  // variazione piccola rispetto al valore enorme
+        let x = base + i;
         valori.push(x);
 
-        // stampa numeri
-        document.getElementById("boxNumeri").value += x + "\n";
+        document.getElementById("boxNumeri").value += x.toFixed(0) + "\n";
 
         // --- WELFORD ---
         n++;
@@ -73,7 +79,7 @@ function testPatologico() {
     let var_online = n > 1 ? M2 / (n - 1) : 0;
 
     // --- NAIVE ---
-    let somma = valori.reduce((a,b) => a + b, 0);
+    let somma = valori.reduce((a, b) => a + b, 0);
     let media_naive = somma / valori.length;
 
     let var_naive = 0;
@@ -88,5 +94,6 @@ function testPatologico() {
 
     document.getElementById("naiveBox").innerText =
         `Media: ${media_naive}\nVarianza: ${var_naive}`;
-}
 
+    alert("Test patologico completato!");
+}
