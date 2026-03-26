@@ -59,7 +59,7 @@ function reset() {
 function testPatologico() {
     reset();
 
-    let base = 1e12;
+    let base = 1e15;
 
     for (let i = 1; i <= 1000; i++) {
         let x = base + i;
@@ -81,10 +81,19 @@ function testPatologico() {
     let somma = valori.reduce((a, b) => a + b, 0);
     let media_naive = somma / valori.length;
 
-    let var_naive = 0;
-    for (let v of valori) {
-        var_naive += Math.pow(v - media_naive, 2);
-    }
+    let somma = 0;
+let somma_quad = 0;
+
+for (let v of valori) {
+    somma += v;
+    somma_quad += v * v;
+}
+
+let media_naive = somma / valori.length;
+
+let var_naive = valori.length > 1
+    ? (somma_quad - (somma * somma) / valori.length) / (valori.length - 1)
+    : 0;
     var_naive = valori.length > 1 ? var_naive / (valori.length - 1) : 0;
 
     // OUTPUT
