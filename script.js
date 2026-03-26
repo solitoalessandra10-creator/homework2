@@ -6,7 +6,7 @@ let valori = [];
 // ---------------------
 // GENERA NUMERO RANDOM
 // ---------------------
-function genera() {
+function genera(){
     const x = Math.random() * 100;
     valori.push(x);
 
@@ -47,7 +47,7 @@ function genera() {
 // ---------------------
 // RESET
 // ---------------------
-function reset() {
+function reset(){
     n = 0;
     media_online = 0;
     M2 = 0;
@@ -61,7 +61,7 @@ function reset() {
 // ---------------------
 // TEST PATOLOGICO
 // ---------------------
-function testPatologico() {
+function testPatologico(){
     reset();
 
     let base = 1e15; // più grande = più evidente errore
